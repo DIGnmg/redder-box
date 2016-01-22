@@ -1,0 +1,13 @@
+{
+  "generator-kraken": {
+    "taskModule": "grunt",
+    "description": "redder of reddits",
+    "author": "dignmg",
+    "templateModule": false,
+    "i18n": false,
+    "componentPackager": false,
+    "cssModule": "sass",
+    "jsModule": "browserify",
+    "useJson": null
+  }
+}

@@ -1,0 +1,114 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,800';
+@import 'reset';
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+#navigation{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 10px solid #252525;
+  border-left: 10px solid #252525;
+  border-right: 10px solid #252525;
+  z-index: 1000;
+
+  background-color: #fff;
+  padding: 20px;
+
+  a{
+    color: #000;
+  }
+}
+
+header {
+  width: 850px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+    list-style: none;
+    list-style-image: none;
+}
+li{
+  width: 16.6666667%;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+h1 {
+  font-size: 56px;
+  font-weight: 800;
+  // letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.content{
+    padding-top: 142px;
+    padding-bottom: 60px;
+    border-right: 10px solid #252525;
+    border-bottom: 10px solid #252525;
+    border-left: 10px solid #252525;
+    min-height: 540px;
+ 
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.number{
+  color: red;
+  background-color: white;
+  border: 5px solid black;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 800;
+  line-height:50px;
+  font-size: 1.3em;
+  margin-top: 20px;
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.meet-intro{
+  height: 747px;
+  padding: 120px 0 60px;
+
+  header{
+    width: 360px;
+    margin-top: 180px;
+  }
+  h1 {
+    font-size: 84px;
+    margin-bottom: 0;
+    text-transform: none;
+    letter-spacing: -5px;
+  }
+}
+
+.meet-details {
+    padding-top: 142px;
+    color: #fff;
+    background: #252525;
+
+    a{
+      color: #fff;
+    }
+}
+
+.message{
+  border-left: 1px solid white;
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 30px;
+}

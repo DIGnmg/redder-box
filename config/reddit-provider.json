@@ -1,0 +1,27 @@
+{
+  "reddit": {
+    "https://oauth.reddit.com": {
+      "__domain": {
+        "auth": {
+          "auth": {"bearer": "[0]"}
+        }
+      },
+      "api/[version]/{endpoint}": {
+        "__path": {
+          "alias": "__default",
+          "version": "v1"
+        }
+      },
+      "subreddits/mine/{endpoint}": {
+        "__path": {
+          "alias": "subreddits"
+        }
+      },
+      "message/{endpoint}": {
+        "__path": {
+          "alias": "messages"
+        }
+      }
+    }
+  }
+}

@@ -3,35 +3,6 @@
     },
 
     "middleware": {
-        "session": {
-            "enabled": true,
-            "priority": 90,
-            "module": {
-                "name": "path:./libs/middleware/redis-session",
-                    "arguments": [
-                    {
-                        "key": "abc123",
-                        "secret": "grant",
-                        "cookie": {
-                            "path": "/",
-                            "httpOnly": true,
-                            "maxAge": 31556926000
-                        },
-                        "resave": true,
-                        "saveUninitialized": true,
-                        "store": null, // NB: this will be overlaid in our module
-                        "proxy": null
-                    },
-                    {
-                        "host": "localhost",
-                        "port": 6379,
-                        "prefix": "session:",
-                        "ttl": 3600
-                    }
-                ]
-            }
-        },
-
         "json":{ 
             "enabled": true,
             "priority": 50,

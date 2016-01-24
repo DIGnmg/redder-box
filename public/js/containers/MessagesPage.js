@@ -6,6 +6,7 @@ import { fetchMessagesInbox } from '../thunks/MessageThunk'
 import Button from '../components/Button';
 
 import _ from 'lodash';
+import moment from 'moment';
 
 export default class LoginPage extends Component {
   
@@ -30,6 +31,7 @@ export default class LoginPage extends Component {
 
   renderMessages(messages){
     let _messages = _.map(messages, function(item, index){
+      let createdTime = moment(item.created)
       return (
         <div className="message" key={index}>
           <h1>{item.subject}</h1>
@@ -37,6 +39,7 @@ export default class LoginPage extends Component {
           <p><strong>from:</strong> {item.author}</p>
           <p><strong>link:</strong> <a href={item.linkTitle}>{item.linkTitle}</a></p>
           <p><strong>subreddit:</strong> {item.subreddit}</p>
+          <p><strong>created:</strong>{createdTime}</p>
         </div>)
     }.bind(this));
 

@@ -20,12 +20,7 @@ options = {
          * Add any additional config setup or overrides here. `config` is an initialized
          * `confit` (https://github.com/krakenjs/confit/) configuration object.
          */
-
-        // var grantConfig = config.get('middleware:grant');
-        var grantConfig = config.get('middleware:grant:module:arguments');
-        var env = config.get('env:env');
-        console.log(env)
-        var grant = new Grant(grantConfig[0][env]);
+         
         next(null, config);
     }
 };

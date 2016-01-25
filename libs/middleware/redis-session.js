@@ -6,7 +6,7 @@ var redis = require('redis');
 
 module.exports = function (settings, redisConfig) {
 	console.log(redisConfig, "redisConfig");
-	var client = redis.createClient({port: redisConfig.port, host: redisConfig.host, password: redisConfig.password});
+	var client = redis.createClient(redisConfig.url);
 	redisConfig.client = client;
     settings.store = new RedisStore(redisConfig);
     return session(settings);

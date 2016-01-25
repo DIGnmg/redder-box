@@ -49,9 +49,7 @@
                         "proxy": null
                     },
                     {
-                        "host": "ec2-107-21-254-141.compute-1.amazonaws.com",
-                        "port": "20489",
-                        "password": "pb5nvl1igd8rcj8jsm1862gei7t",
+                        "url": "redis://redistogo:14fca4f03f99636529892cfb34561b29@tarpon.redistogo.com:11546/",
                         "prefix": "session:",
                         "ttl": 3600
                     }

@@ -36,14 +36,14 @@ function requireAuth(nextState, replaceState) {
 render(
   <Provider store={store}>
     <Router>
-			  <Route path="/" component={App} >
-					<Route path="login" component={LoginPage} />
-					<Route component={AuthenticatedCoreLayout} onEnter={requireAuth} >
-						<Route path="subreddits" component={SubredditPage} />
-						<Route path=":subreddit/comment/:id" component={SubredditCommentPage} />
-						<Route path="messages" component={MessagesPage} />
-					</Route>
-				</Route>
+		<Route path="/" component={App} >
+			<Route name="login" path="/login" component={LoginPage} />
+			<Route component={AuthenticatedCoreLayout} onEnter={requireAuth} >
+				<Route path="subreddits" component={SubredditPage} />
+				<Route path=":subreddit/comment/:id" component={SubredditCommentPage} />
+				<Route path="messages" component={MessagesPage} />
+			</Route>
+		</Route>
 		</Router>
   </Provider>,
   rootElement

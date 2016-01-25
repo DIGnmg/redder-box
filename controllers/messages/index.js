@@ -1,6 +1,8 @@
 'use strict';
+
 var sanitizeHtml = require('sanitize-html');
- 
+var Entities = require('html-entities').AllHtmlEntities; 
+
 var MessageModel = require('../../models/Message');
 var CommentModel = require('../../models/Comment');
 
@@ -32,12 +34,8 @@ var Purest = require('purest'),
 
 var sanitize = function(html){
 	var rawHtml = html.replace(/&lt;!--((?!--&gt;)[\s\S])*?--&gt;/g, '');
-	return sanitizeHtml(rawHtml, 
-			{  
-  				parser: {
-					decodeEntities: true
-				}
-			});
+	var entities = new Entities();
+	return entities.decode(rawHtml);
 }
 
 // t1_	Comment
@@ -169,7 +167,7 @@ module.exports = function (router) {
         
 		console.log('messages');
         var sess = req.session;
-		// console.log(sess, 'sess');
+		console.log(sess, 'sess');
 		var code = null;
 		if(typeof sess.userToken === 'undefined'){
 			console.log('redirect');

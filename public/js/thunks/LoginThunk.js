@@ -9,7 +9,7 @@ export function Login () {
 			contentType: 'application/json',
   			crossOrigin: true
 		}).then(function(response){
-			console.log(response);
+			console.log(response, 'Login');
     		dispatch(AppActions.addUser(response));
 		});
 	}

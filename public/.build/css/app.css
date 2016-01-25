@@ -140,3 +140,8 @@ h1 {
   text-align: left;
   padding: 20px;
   margin-bottom: 30px; }
+
+code {
+  background-color: #333333;
+  display: block;
+  padding: 30px; }

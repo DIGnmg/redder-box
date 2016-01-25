@@ -31,7 +31,7 @@
 
         "session": {
             "enabled": true,
-            "priority": 90,
+            "priority": 50,
             "module": {
                 "name": "path:./libs/middleware/redis-session",
                     "arguments": [

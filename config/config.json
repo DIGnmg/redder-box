@@ -50,8 +50,8 @@
                     },
                     {
                         "host": "ec2-107-21-254-141.compute-1.amazonaws.com",
-                        "port": "20489",
-                        "password": "pb5nvl1igd8rcj8jsm1862gei7t",
+                        "port": "20869",
+                        "password": "pfo6p5pg8jnqs24ac2ntq8ku221",
                         "prefix": "session:",
                         "ttl": 3600
                     }

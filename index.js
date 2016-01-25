@@ -4,7 +4,6 @@ var express = require('express');
 var kraken = require('kraken-js');
 var session = require('express-session');
 var Grant = require('grant-express');
-
 var Purest = require('purest')
 var reddit = new Purest({provider:'reddit'})
 
@@ -20,7 +19,7 @@ options = {
          * Add any additional config setup or overrides here. `config` is an initialized
          * `confit` (https://github.com/krakenjs/confit/) configuration object.
          */
-         
+
         next(null, config);
     }
 };

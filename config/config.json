@@ -29,35 +29,35 @@
             }
         },
 
-        // "session": {
-        //     "enabled": true,
-        //     "priority": 90,
-        //     "module": {
-        //         "name": "path:./libs/middleware/redis-session",
-        //             "arguments": [
-        //             {
-        //                 "key": "abc123",
-        //                 "secret": "grant",
-        //                 "cookie": {
-        //                     "path": "/",
-        //                     "httpOnly": true,
-        //                     "maxAge": 31556926000
-        //                 },
-        //                 "resave": true,
-        //                 "saveUninitialized": true,
-        //                 "store": null, // NB: this will be overlaid in our module
-        //                 "proxy": null
-        //             },
-        //             {
-        //                 "host": "ec2-107-21-254-141.compute-1.amazonaws.com",
-        //                 "port": 20489,
-        //                 "password": "pb5nvl1igd8rcj8jsm1862gei7t",
-        //                 "prefix": "session:",
-        //                 "ttl": 3600
-        //             }
-        //         ]
-        //     }
-        // },
+        "session": {
+            "enabled": true,
+            "priority": 90,
+            "module": {
+                "name": "path:./libs/middleware/redis-session",
+                    "arguments": [
+                    {
+                        "key": "abc123",
+                        "secret": "grant",
+                        "cookie": {
+                            "path": "/",
+                            "httpOnly": true,
+                            "maxAge": 31556926000
+                        },
+                        "resave": true,
+                        "saveUninitialized": true,
+                        "store": null, // NB: this will be overlaid in our module
+                        "proxy": null
+                    },
+                    {
+                        "host": "ec2-107-21-254-141.compute-1.amazonaws.com",
+                        "port": "20489",
+                        "password": "pb5nvl1igd8rcj8jsm1862gei7t",
+                        "prefix": "session:",
+                        "ttl": 3600
+                    }
+                ]
+            }
+        },
 
         "json":{ 
             "enabled": true,

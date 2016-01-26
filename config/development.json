@@ -2,7 +2,7 @@
     "middleware": {
         "grant": {
             "enabled": true,
-            "priority": 100,
+            "priority": 0,
             "module": {
                 "name": "grant-express",
                 "arguments": [
@@ -28,7 +28,7 @@
 
         "session": {
             "enabled": true,
-            "priority": 50,
+            "priority": 10,
             "module": {
                 "name": "path:./libs/middleware/redis-session",
                     "arguments": [
@@ -58,7 +58,7 @@
 
         "devtools": {
             "enabled": true,
-            "priority": 35,
+            "priority": 20,
             "module": {
                 "name": "construx",
                 "arguments": [

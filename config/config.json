@@ -5,7 +5,7 @@
     "middleware": {
         "grant": {
             "enabled": true,
-            "priority": 100,
+            "priority": 0,
             "module": {
                 "name": "grant-express",
                 "arguments": [
@@ -31,7 +31,7 @@
 
         "session": {
             "enabled": true,
-            "priority": 50,
+            "priority": 10,
             "module": {
                 "name": "path:./libs/middleware/redis-session",
                     "arguments": [
@@ -62,7 +62,7 @@
 
         "json":{ 
             "enabled": true,
-            "priority": 50,
+            "priority": 20,
             "module":{
                 "name": "body-parser",
                 "method": "json"
@@ -70,12 +70,16 @@
         },
 
         "static": {
+            "enabled": true,
+            "priority": 30,
             "module": {
                 "arguments": [ "path:./public/.build" ]
             }
         },
 
         "router": {
+            "enabled": true,
+            "priority": 40,
             "module": {
                 "arguments": [{ "directory": "path:./controllers" }]
             }

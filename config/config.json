@@ -49,6 +49,7 @@
                         "proxy": null
                     },
                     {
+                        "url": "redis://h:pfo6p5pg8jnqs24ac2ntq8ku221@ec2-107-21-254-141.compute-1.amazonaws.com:20869",
                         "host": "ec2-107-21-254-141.compute-1.amazonaws.com",
                         "port": "20869",
                         "password": "pfo6p5pg8jnqs24ac2ntq8ku221",

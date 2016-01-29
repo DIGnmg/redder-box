@@ -1,26 +1,26 @@
 {
     "middleware": {
-        "grant": {
+        
+        "devtools": {
             "enabled": true,
-            "priority": 0,
+            "priority": 10,
             "module": {
-                "name": "grant-express",
+                "name": "construx",
                 "arguments": [
-                   {
-                      "server": {
-                        "protocol": "http",
-                        "host": "localhost:8000",
-                        "callback": "/handle_reddit_callback",
-                        "transport": "session",
-                        "state": true
-                      },
-                      "reddit": {
-                        "key": "2Brq1Mv8zQdoUg",
-                        "secret": "erATARUu-M2GUCrYWKBTN3SS9Z8",
-                        "custom_params": {"duration":"permanent"},
-                        "scope": ["identity,mysubreddits,privatemessages,read"],
-                        "callback": "/"
-                      }
+                    "path:./public",
+                    "path:./.build",
+                    {
+                        
+                        
+                        "css": {
+                            "module": "construx-sass",
+                            "files": "/css/**/*.css"
+                        },
+                        
+                        "copier": {
+                            "module": "construx-copier",
+                            "files": "**/*"
+                        }
                     }
                 ]
             }
@@ -28,7 +28,7 @@
 
         "session": {
             "enabled": true,
-            "priority": 10,
+            "priority": 20,
             "module": {
                 "name": "path:./libs/middleware/redis-session",
                     "arguments": [
@@ -56,26 +56,27 @@
             }
         },
 
-        "devtools": {
+        "grant": {
             "enabled": true,
-            "priority": 20,
+            "priority": 30,
             "module": {
-                "name": "construx",
+                "name": "grant-express",
                 "arguments": [
-                    "path:./public",
-                    "path:./.build",
-                    {
-                        
-                        
-                        "css": {
-                            "module": "construx-sass",
-                            "files": "/css/**/*.css"
-                        },
-                        
-                        "copier": {
-                            "module": "construx-copier",
-                            "files": "**/*"
-                        }
+                   {
+                      "server": {
+                        "protocol": "http",
+                        "host": "localhost:8000",
+                        "callback": "/handle_reddit_callback",
+                        "transport": "session",
+                        "state": true
+                      },
+                      "reddit": {
+                        "key": "2Brq1Mv8zQdoUg",
+                        "secret": "erATARUu-M2GUCrYWKBTN3SS9Z8",
+                        "custom_params": {"duration":"permanent"},
+                        "scope": ["identity,mysubreddits,privatemessages,read"],
+                        "callback": "/"
+                      }
                     }
                 ]
             }

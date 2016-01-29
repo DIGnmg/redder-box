@@ -20,6 +20,7 @@
     "grant-express": "^3.5.3",
     "html-entities": "^1.2.0",
     "kraken-js": "^1.0.3",
+    "opbeat": "^3.1.4",
     "purest": "^2.0.0",
     "redis": "^2.4.2",
     "sanitize-html": "^1.11.3",

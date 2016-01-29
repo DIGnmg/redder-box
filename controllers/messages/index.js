@@ -170,8 +170,9 @@ module.exports = function (router) {
 		console.log(sess, 'sess');
 		var code = null;
 		if(typeof sess.userToken === 'undefined'){
-			console.log('redirect');
-			res.redirect('/');
+			// res.redirect('/');
+			// res.status(200).send(model);
+			console.log('No Token');
 		} else {
 			code = sess.userToken.access_token;
 			console.log(code, 'code');

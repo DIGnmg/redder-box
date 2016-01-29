@@ -3,35 +3,35 @@
     },
 
     "middleware": {
-        "grant": {
+        
+        "json":{ 
             "enabled": true,
-            "priority": 0,
+            "priority": 10,
+            "module":{
+                "name": "body-parser",
+                "method": "json"
+            }
+        },
+
+        "static": {
+            "enabled": true,
+            "priority": 20,
             "module": {
-                "name": "grant-express",
-                "arguments": [
-                   {
-                      "server": {
-                        "protocol": "http",
-                        "host": "mighty-scrubland-94929.herokuapp.com",
-                        "callback": "/handle_reddit_callback",
-                        "transport": "session",
-                        "state": true
-                      },
-                      "reddit": {
-                        "key": "2Brq1Mv8zQdoUg",
-                        "secret": "erATARUu-M2GUCrYWKBTN3SS9Z8",
-                        "custom_params": {"duration":"permanent"},
-                        "scope": ["identity,mysubreddits,privatemessages,read"],
-                        "callback": "/"
-                      }
-                    }
-                ]
+                "arguments": [ "path:./public/.build" ]
+            }
+        },
+
+        "router": {
+            "enabled": true,
+            "priority": 30,
+            "module": {
+                "arguments": [{ "directory": "path:./controllers" }]
             }
         },
 
         "session": {
             "enabled": true,
-            "priority": 10,
+            "priority": 40,
             "module": {
                 "name": "path:./libs/middleware/redis-session",
                     "arguments": [
@@ -60,30 +60,30 @@
             }
         },
 
-        "json":{ 
+        "grant": {
             "enabled": true,
-            "priority": 20,
-            "module":{
-                "name": "body-parser",
-                "method": "json"
-            }
-        },
-
-        "static": {
-            "enabled": true,
-            "priority": 30,
+            "priority": 50,
             "module": {
-                "arguments": [ "path:./public/.build" ]
-            }
-        },
-
-        "router": {
-            "enabled": true,
-            "priority": 40,
-            "module": {
-                "arguments": [{ "directory": "path:./controllers" }]
+                "name": "grant-express",
+                "arguments": [
+                   {
+                      "server": {
+                        "protocol": "http",
+                        "host": "mighty-scrubland-94929.herokuapp.com",
+                        "callback": "/handle_reddit_callback",
+                        "transport": "session",
+                        "state": true
+                      },
+                      "reddit": {
+                        "key": "2Brq1Mv8zQdoUg",
+                        "secret": "erATARUu-M2GUCrYWKBTN3SS9Z8",
+                        "custom_params": {"duration":"permanent"},
+                        "scope": ["identity,mysubreddits,privatemessages,read"],
+                        "callback": "/"
+                      }
+                    }
+                ]
             }
         }
-
     }
 }

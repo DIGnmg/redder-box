@@ -69,7 +69,7 @@
                    {
                       "server": {
                         "protocol": "http",
-                        "host": "mighty-scrubland-94929.herokuapp.com",
+                        "host": "redder-box.herokuapp.com",
                         "callback": "/handle_reddit_callback",
                         "transport": "session",
                         "state": true

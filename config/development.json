@@ -50,6 +50,7 @@
                         "host": "localhost",
                         "port": "6379",
                         "prefix": "session:",
+                        "password": "",
                         "ttl": 3600
                     }
                 ]

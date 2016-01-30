@@ -79,6 +79,10 @@
                     }
                 ]
             }
+        },
+        "logger": {
+            "enabled": true,
+            "priority": 40
         }
     }
 }

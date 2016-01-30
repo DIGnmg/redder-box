@@ -11,6 +11,7 @@ module.exports = function (router) {
 	router.get('/', function (req, res) {
 		
 		var sess = req.session;
+		console.log(req);
 		if(typeof sess.grant === 'undefined'){
 			res.status(200).send(model);
 			console.log('No Token');

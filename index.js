@@ -9,6 +9,8 @@ var reddit = new Purest({provider:'reddit'})
 
 var options, app;
 
+// process.env['NODE_ENV'] = 'production';
+
 // top of your main app's file
 var opbeat = require('opbeat').start({
   organizationId: 'ec2599017d484a00bb3dfdff0d5a86ca',

@@ -10,8 +10,6 @@
                     "path:./public",
                     "path:./.build",
                     {
-                        
-                        
                         "css": {
                             "module": "construx-sass",
                             "files": "/css/**/*.css"
@@ -31,7 +29,7 @@
             "priority": 20,
             "module": {
                 "name": "path:./libs/middleware/redis-session",
-                    "arguments": [
+                "arguments": [
                     {
                         "key": "abc123",
                         "secret": "grant",

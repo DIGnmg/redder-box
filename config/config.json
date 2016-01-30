@@ -3,7 +3,11 @@
     },
 
     "middleware": {
-        
+        "favicon": {
+            "enabled": false,
+            "priority": 0
+        },
+
         "json":{ 
             "enabled": true,
             "priority": 10,

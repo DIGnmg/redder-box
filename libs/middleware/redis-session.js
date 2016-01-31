@@ -5,7 +5,8 @@ var RedisStore = require('connect-redis')(session);
 var redis = require('redis');
 
 module.exports = function (settings, redisConfig) {
-	var url = process.env.REDIS_URL || redisConfig.url;
+	// var url = process.env.REDIS_URL || redisConfig.url;
+	var url = redisConfig.url;
 	console.log(url);
 	var client = redis.createClient(url, {port: redisConfig.port, host: redisConfig.host, password: redisConfig.password});
 	// var client = redis.createClient(url);

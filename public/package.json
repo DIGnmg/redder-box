@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "browserify": "^12.0.1",
+    "classnames": "^2.2.3",
     "glob": "^6.0.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
@@ -45,6 +46,8 @@
     "history": "^1.13.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-router": "^1.0.0"
+    "react-router": "^1.0.0",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2"
   }
 }

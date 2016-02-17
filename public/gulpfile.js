@@ -8,6 +8,9 @@ var watchify = require('watchify');
 var notify = require('gulp-notify');
 var sass = require('gulp-sass');
 
+var bourbon = require('node-bourbon');
+var neat = require('node-neat');
+
 function handleErrors() {
   var args = Array.prototype.slice.call(arguments);
   notify.onError({
@@ -61,7 +64,9 @@ gulp.task('copyIndex', function() {
 
 gulp.task('styles', function() {
     gulp.src('sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            includePaths: ['styles'].concat(bourbon.includePaths).concat(neat.includePaths)
+        }).on('error', sass.logError))
         .pipe(gulp.dest('.build/css/'));
 });
 

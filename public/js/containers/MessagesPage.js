@@ -3,18 +3,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as AppActions from '../actions/AppActions';
 import { fetchMessagesInbox } from '../thunks/MessageThunk'
+
 import Button from '../components/Button';
+import SelectedPane from '../components/SelectedPane';
+import Messages from '../components/Messages';
 
 import _ from 'lodash';
 import moment from 'moment';
 
-export default class LoginPage extends Component {
+export default class MessagesPage extends Component {
   
   constructor(props) {
     super(props)
+    this.state = {isOpen: false}
     this.fetchMessagesFromInbox = this.fetchMessagesFromInbox.bind(this)
-    this.rawHTML = this.rawHTML.bind(this)
-    this.renderMessages = this.renderMessages.bind(this)
+    this.selectPane = this.selectPane.bind(this)
   }
 
   componentDidMount() {
@@ -25,49 +28,30 @@ export default class LoginPage extends Component {
     this.props.dispatch(fetchMessagesInbox());
   }
 
-  rawHTML(raw) {
-    return { __html: raw };
-  }
-
-  renderMessages(messages){
-    let _messages = _.map(messages, function(item, index){
-    // let createdTime = moment(item.created);
-          // <p><strong>created:</strong>{createdTime}</p>
-      return (
-        <div className="message" key={index}>
-          <h1>{item.subject}</h1>
-          <div dangerouslySetInnerHTML={this.rawHTML(item.bodyHtml)} />
-          <p><strong>from:</strong> {item.author}</p>
-          <p><strong>link:</strong> <a href={item.linkTitle}>{item.linkTitle}</a></p>
-          <p><strong>subreddit:</strong> {item.subreddit}</p>
-        </div>)
-    }.bind(this));
-
-    return _messages;
-  }
-
   render() {
     return (
       <div>
-        <Button text={'get latest messages'} handleClick={this.fetchMessagesFromInbox} />
         <section className="meet-intro">
           <div className="container">
             <header>
               <h1>Redder Box</h1>
               Messages Waiting to be seen
-              <div className="number">{this.props.messages.length}</div>
+              <div onClick={this.selectPane} className="number">{this.props.messages.length}</div>
             </header>
           </div>
         </section>
-        <section className="meet-details">
-          <div className="container">
-            <header>
-              {this.renderMessages(this.props.messages)}
-            </header>
-          </div>
-        </section>
+        <SelectedPane isOpen={this.state.isOpen}>
+          <Messages messages={this.props.messages} />
+        </SelectedPane>
       </div>
     );
+  }
+
+  selectPane() {
+    console.log('select');
+    this.setState({
+      isOpen: true
+    })
   }
 }
 
@@ -83,4 +67,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(LoginPage)
+export default connect(mapStateToProps)(MessagesPage)

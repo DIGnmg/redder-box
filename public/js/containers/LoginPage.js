@@ -51,7 +51,7 @@ export default class LoginPage extends Component {
           <Button text={'Get User'} handleClick={this.fetchUser} />
           <div className="container">
             <header>
-              <a href="/connect/reddit">Login</a>
+              <button><a href="/connect/reddit">Login</a></button>
             </header>
           </div>
         </section>

@@ -1,53 +1,20 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:400,800';
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+html {
+  box-sizing: border-box; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
 
 body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-body {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  color: black; }
 
 #navigation {
   position: fixed;
@@ -55,46 +22,35 @@ body {
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  border-top: 10px solid #252525;
-  border-left: 10px solid #252525;
-  border-right: 10px solid #252525;
   z-index: 1000;
-  background-color: #fff;
-  padding: 20px; }
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5); }
+  #navigation ul {
+    margin: 0;
+    list-style: none;
+    list-style-image: none;
+    text-align: center; }
+  #navigation li {
+    width: 16.6666667%;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-weight: 400; }
   #navigation a {
-    color: #000; }
+    color: #000;
+    text-decoration: none; }
 
 header {
-  width: 850px;
   text-align: center;
   margin: 0 auto; }
 
-ul {
-  margin: 0;
-  list-style: none;
-  list-style-image: none; }
-
-li {
-  width: 16.6666667%;
-  display: inline-block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  font-weight: 400; }
-
 h1 {
-  font-size: 56px;
+  font-size: 26px;
   font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 20px; }
+  text-transform: uppercase; }
 
 .content {
-  padding-top: 142px;
-  padding-bottom: 60px;
-  border-right: 10px solid #252525;
-  border-bottom: 10px solid #252525;
-  border-left: 10px solid #252525;
-  min-height: 540px;
   padding-top: 0px;
   padding-bottom: 0px; }
 
@@ -104,44 +60,76 @@ h1 {
   border: 5px solid black;
   width: 50px;
   height: 50px;
-  border-radius: 100px;
   text-align: center;
   margin: 0 auto;
   font-weight: 800;
-  line-height: 50px;
+  line-height: 40px;
   font-size: 1.3em;
   margin-top: 20px; }
 
 .container {
-  width: 940px;
-  margin: 0 auto; }
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
 
-.meet-intro {
-  height: 747px;
-  padding: 120px 0 60px; }
-  .meet-intro header {
-    width: 360px;
-    margin-top: 180px; }
-  .meet-intro h1 {
-    font-size: 84px;
-    margin-bottom: 0;
-    text-transform: none;
-    letter-spacing: -5px; }
+.meet-intro header {
+  width: 360px;
+  margin-top: 180px; }
 
-.meet-details {
-  padding-top: 142px;
-  color: #fff;
-  background: #252525; }
-  .meet-details a {
-    color: #fff; }
+.meet-intro h1 {
+  font-size: 84px;
+  margin-bottom: 0;
+  text-transform: none;
+  letter-spacing: -5px; }
+
+.message-parent {
+  border-bottom: 1px black solid;
+  border-top: 1px black solid; }
 
 .message {
-  border-left: 1px solid white;
-  text-align: left;
-  padding: 20px;
-  margin-bottom: 30px; }
+  border-bottom: 1px solid black;
+  text-align: left; }
+  .message .message-details {
+    border-top: 1px black dashed;
+    width: 100%; }
+    .message .message-details p {
+      display: inline-block;
+      padding: 10px; }
+  .message h1 {
+    display: inline-block; }
+  .message div {
+    padding: 10px; }
+  .message a {
+    color: #000; }
+
+.selected-pane {
+  transition: all 1s;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 56;
+  color: black;
+  overflow-y: auto; }
+  .selected-pane.selected {
+    max-height: 100%; }
+  .selected-pane.hidden {
+    max-height: 0; }
+  .selected-pane .close {
+    position: absolute;
+    top: 10;
+    right: 10;
+    text-decoration: underline;
+    cursor: pointer; }
 
 code {
-  background-color: #333333;
-  display: block;
-  padding: 30px; }
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  width: 100%; }

@@ -13,7 +13,7 @@ export default class LoginPage extends Component {
     super(props)
     this.fetchUser = this.fetchUser.bind(this);
     this.updateAuth = this.updateAuth.bind(this);
-    this.state = {loggedIn: auth.loggedIn()};
+    this.state = {loggedIn: auth.loggedIn(), error: false};
   }
 
   componentDidMount() {
@@ -48,7 +48,6 @@ export default class LoginPage extends Component {
     return (
       <div>
          <section className="meet-intro">
-          <Button text={'Get User'} handleClick={this.fetchUser} />
           <div className="container">
             <header>
               <button><a href="/connect/reddit">Login</a></button>

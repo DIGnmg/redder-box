@@ -2,9 +2,9 @@
 
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
-// var redis = require('redis');
+var redis = require('redis');
 // Or you can specify a URL 
-var redis = require('redis-url');
+// var redis = require('redis-url');
 
 module.exports = function (settings, redisConfig) {
 	var url = process.env.REDIS_URL || redisConfig.url;
@@ -15,8 +15,8 @@ module.exports = function (settings, redisConfig) {
 		password: redisConfig.password
 	};
 	// Or you can specify a URL 
-    var client = redis.connect(url);
-	// var client = redis.createClient(url, redisOptions);
+    // var client = redis.connect(url);
+	var client = redis.createClient(url, redisOptions);
 	// var client = redis.createClient(url);
 	// client.auth(redisConfig.password);
 

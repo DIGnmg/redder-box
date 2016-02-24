@@ -45,12 +45,11 @@
                         "proxy": null
                     },
                     {
-                        "url": "redis://h:pfo6p5pg8jnqs24ac2ntq8ku221@ec2-107-21-254-141.compute-1.amazonaws.com:20869",
-                        "host": "ec2-107-21-254-141.compute-1.amazonaws.com",
-                        "port": "20869",
+                        "url": "redis://h:pfo6p5pg8jnqs24ac2ntq8ku221@ec2-54-83-207-85.compute-1.amazonaws.com:7569",
+                        "host": "ec2-54-83-207-85.compute-1.amazonaws.com",
+                        "port": "7569",
                         "password": "pfo6p5pg8jnqs24ac2ntq8ku221",
-                        "prefix": "session:",
-                        "ttl": 3600
+                        "prefix": "session:"
                     }
 
                 ]

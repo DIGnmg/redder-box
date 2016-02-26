@@ -21,7 +21,7 @@ var Purest = require('purest'),
 // t6_	Award
 // t8_	PromoCampaign
 
-var MeDto = function (data){
+var TranslateMeDtoObject = function (data){
 
 	if(data != null){
 		var model = new UserModel();
@@ -53,7 +53,7 @@ module.exports = function (router) {
 						res.status(500).send(err);
 					} else if(body){
 						// send transformed response
-						// res.status(200).send(MeDto(body));
+						// res.status(200).send(TranslateMeDtoObject(body));
 						res.status(200).send(body);
 					} else {
 						// send empty response

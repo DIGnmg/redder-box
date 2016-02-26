@@ -117,7 +117,7 @@ var CommentContent = function(data){
 	}
 }
 
-var SubredditCommentDto = function (data){
+var TransalteSubredditCommentObject = function (data){
 	var array = [],
 		newArray = [],
 		comments = [],
@@ -163,7 +163,7 @@ module.exports = function (router) {
 						res.status(500).send(err);
 					} else if(body){
 						// send transformed response
-						res.status(200).send(SubredditCommentDto(body));
+						res.status(200).send(TransalteSubredditCommentObject(body));
 						// res.status(200).send(body);
 					} else {
 						// send empty response

@@ -44,7 +44,7 @@ var Purest = require('purest'),
 	  }
 	})
 
-var SubredditDto = function (data){
+var TranslateSubredditObject = function (data){
 	var array = [],
 		newArray = [];
 	
@@ -103,7 +103,7 @@ module.exports = function (router) {
 						res.status(500).send(err);
 					} else if(body){
 						// send transformed response
-						// res.status(200).send(SubredditDto(body));
+						// res.status(200).send(TranslateSubredditObject(body));
 						res.status(200).send(body);
 					} else {
 						// send empty response

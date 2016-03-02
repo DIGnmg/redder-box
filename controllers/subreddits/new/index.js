@@ -5,16 +5,16 @@ var Purest = require('purest'),
 	reddit = new Purest({
 		provider:'reddit',
 		config:{
-			"reddit": {
-				"https://oauth.reddit.com": {
-				  "__domain": {
-					"auth": {
-					  "auth": {"bearer": "[0]"}
+			'reddit': {
+				'https://oauth.reddit.com': {
+				  '__domain': {
+					'auth': {
+					  'auth': {'bearer': '[0]'}
 					}
 				  },
-				  "r/{endpoint}/new": {
-					"__path": {
-					  "alias": "new"
+				  'r/{endpoint}/new': {
+					'__path': {
+					  'alias': 'new'
 					}
 				  }
 				}
@@ -22,16 +22,16 @@ var Purest = require('purest'),
 		},
 		before:{
 		all: function (endpoint, options, config) {
-			options.headers = {"User-Agent": "web:com.dignmg.redder:v1.0.0"};
+			options.headers = {'User-Agent': 'web:com.dignmg.redder:v1.0.0'};
 		}
 	  }
-	})
+	});
 
 var TranslateSubredditPostObject = function (data){
 	var array = [],
 		newArray = [];
 	
-	if(data != null){
+	if(data !== null){
 		console.log(data, 'data');
 		array = data.data.children;
 	}
@@ -49,11 +49,11 @@ var TranslateSubredditPostObject = function (data){
 			model.id = responseItem.id;
 			model.subreddit = responseItem.subreddit;
 			return model;
-		})
+		});
 		return newArray;
 	}
 
-}
+};
 
 module.exports = function (router) {
 
@@ -63,7 +63,7 @@ module.exports = function (router) {
 		console.log('new', sess);
 		var code = null;
 		var url = null;
-		if(sess.userToken == null){
+		if(sess.userToken === null){
 			console.log('redirect');
 			res.redirect('/');
 		} else {

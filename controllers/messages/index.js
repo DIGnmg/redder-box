@@ -36,7 +36,7 @@ var sanitize = function(html){
 	var rawHtml = html.replace(/&lt;!--((?!--&gt;)[\s\S])*?--&gt;/g, '');
 	var entities = new Entities();
 	return entities.decode(rawHtml);
-}
+};
 
 // t1_	Comment
 // t2_	Account
@@ -51,7 +51,6 @@ var findKind = function(data){
 	  case 't1':
 	    //Statements executed when the result of expression matches t1_
 	    return TranslateCommentObject(data);
-	    break;
 	  case 't2':
 	    //Statements executed when the result of expression matches t2
 	    break;
@@ -61,7 +60,6 @@ var findKind = function(data){
 	  case 't4':
 	    //Statements executed when the result of expression matches t4
 	    return TranslateMessageObject(data.data);
-	    break;
 	  case 't5':
 	    //Statements executed when the result of expression matches t5
 	    break;

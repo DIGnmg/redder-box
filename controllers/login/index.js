@@ -21,5 +21,5 @@ module.exports = function (router) {
 			model.auth = true;
 			res.send(model, null, 2);
 		}
-	})
+	});
 };

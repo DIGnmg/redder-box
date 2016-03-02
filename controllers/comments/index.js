@@ -4,22 +4,22 @@ var Purest = require('purest'),
 	reddit = new Purest({
 		provider:'reddit',
 		config:{
-			"reddit": {
-				"https://oauth.reddit.com": {
-				  "__domain": {
-					"auth": {
-					  "auth": {"bearer": "[0]"}
+			'reddit': {
+				'https://oauth.reddit.com': {
+				  '__domain': {
+					'auth': {
+					  'auth': {'bearer': '[0]'}
 					}
 				  },
-				  "api/[version]/{endpoint}": {
-					"__path": {
-					  "alias": "__default",
-					  "version": "v1"
+				  'api/[version]/{endpoint}': {
+					'__path': {
+					  'alias': '__default',
+					  'version': 'v1'
 					}
 				  },
-				  "{endpoint}": {
-					"__path": {
-					  "alias": "article"
+				  '{endpoint}': {
+					'__path': {
+					  'alias': 'article'
 					}
 				  }
 				}
@@ -27,10 +27,10 @@ var Purest = require('purest'),
 		},
 		before:{
 		all: function (endpoint, options, config) {
-			options.headers = {"User-Agent": "web:com.dignmg.redder:v1.0.0"};
+			options.headers = {'User-Agent': 'web:com.dignmg.redder:v1.0.0'};
 		}
 	  }
-	})
+	});
 
 var CommentHeader = function(data){
 	var _header = data.data.children[0].data;
@@ -62,15 +62,15 @@ var CommentHeader = function(data){
 		upvote_ratio : _header.upvote_ratio,
 		url : _header.url,
 		visited : _header.visited
-	}
+	};
 
-}
+};
 
 var CommentContent = function(data){
 	var array = [],
 		newArray = [];
 
-	if(data != null){
+	if(data !== null){
 		array = data.data.children;
 	}
 	if(array.length){
@@ -112,10 +112,10 @@ var CommentContent = function(data){
 			model.ups = responseItem.ups;
 			model.userReports = responseItem.user_reports;
 			return model;
-		})
+		});
 		return newArray;
 	}
-}
+};
 
 var TransalteSubredditCommentObject = function (data){
 	var array = [],
@@ -123,16 +123,16 @@ var TransalteSubredditCommentObject = function (data){
 		comments = [],
 		header = {};
 	
-	if(data != null){
+	if(data !== null){
 		header = CommentHeader(data[0]);
-		comments = CommentContent(data[1])
+		comments = CommentContent(data[1]);
 	}
 	return {
 		header: header,
 		comments: comments
-	}
+	};
 
-}
+};
 
 module.exports = function (router) {
 
@@ -144,7 +144,7 @@ module.exports = function (router) {
 		var article = null;
 		var redditurl = null;
 
-		if(sess.userToken == null){
+		if(sess.userToken === null){
 			console.log('redirect');
 			res.redirect('/');
 		} else {

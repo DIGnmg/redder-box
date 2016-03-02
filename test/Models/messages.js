@@ -35,10 +35,8 @@ describe('messages', function () {
         request(mock)
             .get('/messages')
             .expect(200)
-            .expect('Content-Type', /html/)
-            
-                .expect(/"name": "index"/)
-            
+            .expect('Content-Type', /json/)
+            // .expect(/"name": "index"/)
             .end(function (err, res) {
                 done(err);
             });

@@ -8,10 +8,10 @@ var Purest = require('purest'),
 		provider:'reddit',
 		before:{
 		all: function (endpoint, options, config) {
-			options.headers = {"User-Agent": "web:com.dignmg.redder:v1.0.0"};
+			options.headers = {'User-Agent': 'web:com.dignmg.redder:v1.0.0'};
 		}
 	  }
-	})
+	});
 
 // t1_	Comment
 // t2_	Account
@@ -23,14 +23,14 @@ var Purest = require('purest'),
 
 var TranslateMeDtoObject = function (data){
 
-	if(data != null){
+	if(data !== null){
 		var model = new UserModel();
 		var responseItem = data;
 		model.name = responseItem.name;
 		console.log(model);
 		return model;
 	}
-}
+};
 
 module.exports = function (router) {
 	router.get('/', function (req, res) {

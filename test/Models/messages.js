@@ -13,7 +13,6 @@ describe('messages', function () {
 
     var app, mock;
 
-
     beforeEach(function (done) {
         app = express();
         app.on('start', done);
@@ -25,11 +24,9 @@ describe('messages', function () {
 
     });
 
-
     afterEach(function (done) {
         mock.close(done);
     });
-
 
     it('should say "hello"', function (done) {
         request(mock)

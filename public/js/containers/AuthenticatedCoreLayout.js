@@ -17,7 +17,6 @@ function mapStateToProps(state) {
     console.log(state, 'Login Page');
     
     return {
-      subreddits: state.subreddits.subreddits,
       user: state.user.user,
       redditUser: state.user.redditUser
     }

@@ -22,18 +22,14 @@ export default class Messages extends Component {
 
   renderMessages(messages){
     let _messages = _.map(messages, function(item, index){
-    let createdTime = moment(item.created).format('h:mm');
+    let createdTime = moment(item.created*1000).format('D MMM, YYYY H:mm a');
+    let content = item.body.slice(0,45);
       return (
         <div className="message" key={index}>
           <div className="message-row">
-            {index + 1}: <span dangerouslySetInnerHTML={this.rawHTML(item.bodyHtml)} />
-          </div>
-          <div className="message-details message-row">
-            <p><strong>created:</strong> {createdTime}</p>
-            <p>{item.subject}</p>
-            <p><strong>from:</strong> {item.author}</p>
-            <p><strong>link:</strong> <a href={item.linkTitle}>{item.linkTitle}</a></p>
-            <p><strong>subreddit:</strong> {item.subreddit}</p>
+            <h3>{item.subject}</h3>
+            <p>{createdTime} by: {item.author}</p>
+            <p>{content}</p>
           </div>
         </div>
         )

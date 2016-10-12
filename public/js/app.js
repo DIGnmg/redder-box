@@ -8,9 +8,7 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import AuthenticatedCoreLayout from './containers/AuthenticatedCoreLayout';
 import LoginPage from './containers/LoginPage';
-import SubredditPage from './containers/SubredditPage';
 import MessagesPage from './containers/MessagesPage';
-import SubredditCommentPage from './containers/SubredditCommentPage';
 
 import rootReducer from './reducers/index';
 
@@ -39,8 +37,6 @@ render(
 		<Route path="/" component={App} >
 			<Route name="login" path="/login" component={LoginPage} />
 			<Route component={AuthenticatedCoreLayout} onEnter={requireAuth} >
-				<Route path="subreddits" component={SubredditPage} />
-				<Route path=":subreddit/comment/:id" component={SubredditCommentPage} />
 				<Route path="messages" component={MessagesPage} />
 			</Route>
 		</Route>

@@ -12,7 +12,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: sans-serif;
   background-color: white;
   color: black;
   margin: 0; }
@@ -94,6 +94,9 @@ h1 {
 .message {
   border-bottom: 1px solid black;
   text-align: left; }
+  .message .message-row .md {
+    color: gray;
+    padding: 0; }
   .message .message-details {
     border-top: 1px black dashed;
     width: 100%; }
